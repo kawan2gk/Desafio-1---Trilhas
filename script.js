@@ -1,61 +1,111 @@
 
-
 function simularCompra() {
-    const precopequenoprincipe = 15.00;
-    const precoomundodesofia = 60.00;
-    const precobiblia = 70.00;
 
-    const quantidadepequenoprincipe = Number (prompt("Quantas unidades deseja? digite 0 para não comprar."));
+    // 1. Definir os preços dos livros
+    const precoDomCasmurro = 35.90;
+    const precoPequenoPrincipe = 29.90;
+    const precoHarryPotter = 49.90;
 
-    if (! Number.isInteger(quantidadepequenoprincipe) || quantidadepequenoprincipe < 0 ) {alert("Quantidade inválida. Digite um valor maior ou igual a zero."); return;}
+    // 2. Perguntar as quantidades
+    const quantidadeDomCasmurro = Number(
+        prompt("Quantos exemplares de Dom Casmurro deseja comprar? Digite 0 para não comprar.")
+    );
 
-// outro
-   const quantidaomundodesofia = Number (prompt("Quantas unidades deseja? digite 0 para não comprar."));
+    if (!Number.isInteger(quantidadeDomCasmurro) ||
+        quantidadeDomCasmurro < 0) {
+        alert("Quantidade inválida. Digite um número inteiro maior ou igual a zero.");
+        return;
+    }
 
-    if (! Number.isInteger(quantidaomundodesofia) || quantidaomundodesofia < 0 ) {alert("Quantidade inválida. Digite um valor maior ou igual a zero."); return;}
+    const quantidadePequenoPrincipe = Number(
+        prompt("Quantos exemplares de O Pequeno Príncipe deseja comprar? Digite 0 para não comprar.")
+    );
 
-// outro 
-    const quantidadebiblia = Number (prompt("Quantas unidades deseja? digite 0 para não comprar."));
+    if (!Number.isInteger(quantidadePequenoPrincipe) ||
+        quantidadePequenoPrincipe < 0) {
+        alert("Quantidade inválida. Digite um número inteiro maior ou igual a zero.");
+        return;
+    }
 
-    //selecionando produtos
-    if (! Number.isInteger(quantidadebiblia) || quantidadebiblia < 0 ) {alert("Quantidade inválida. Digite um valor maior ou igual a zero."); return}
+    const quantidadeHarryPotter = Number(
+        prompt("Quantos exemplares de Harry Potter e a Pedra Filosofal deseja comprar? Digite 0 para não comprar.")
+    );
 
-    if (quantidadepequenoprincipe ===0 && quantidaomundodesofia === 0 && quantidadebiblia === 0 ){alert ("Nenhum produto foi selecionado."); return;}
+    if (!Number.isInteger(quantidadeHarryPotter) ||
+        quantidadeHarryPotter < 0) {
+        alert("Quantidade inválida. Digite um número inteiro maior ou igual a zero.");
+        return;
+    }
 
-//valor da compra
-const totalp1 = precopequenoprincipe *quantidadepequenoprincipe;
-const totalp2 = precoomundodesofia*quantidaomundodesofia;
-const totalp3 =precobiblia*quantidadebiblia;
+    // 3. Verificar se algum produto foi selecionado
+    if (
+        quantidadeDomCasmurro === 0 &&
+        quantidadePequenoPrincipe === 0 &&
+        quantidadeHarryPotter === 0
+    ) {
+        alert("Nenhum produto foi selecionado.");
+        return;
+    }
 
-// final
-const total = totalp1 + totalp2 + totalp3;
+    // 4. Calcular o valor de cada produto
+    const subtotalDomCasmurro =
+        precoDomCasmurro * quantidadeDomCasmurro;
 
-//Desconto se tiver
-let desconto = 0
-if total >= 100 {desconto = total * 0.10};
+    const subtotalPequenoPrincipe =
+        precoPequenoPrincipe * quantidadePequenoPrincipe;
 
-//Dar desconto
-const totalfinal = total - desconto;
+    const subtotalHarryPotter =
+        precoHarryPotter * quantidadeHarryPotter;
 
-const formatarMoeda = valor => valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+    // 5. Calcular o total antes do desconto
+    const total =
+        subtotalDomCasmurro +
+        subtotalPequenoPrincipe +
+        subtotalHarryPotter;
 
-//exibir os valores
-let resultado = "LivroTeca - Livraria Brasil\n\n";
-resultado += "O pequeno principe:" + quantidadepequenoprincipe +"unidades -" + formatarMoeda(totalp1) +"\n"; 
+    // 6. Verificar o direito ao desconto
+    let desconto = 0;
 
-resultado += "O Mundo de Sofia:" + quantidaomundodesofia +"unidades -" + formatarMoeda(totalp2) +"\n";
+    if (total >= 100) {
+        desconto = total * 0.10;
+    }
 
-resultado += "Biblia:" + quantidadebiblia +"unidades -" + formatarMoeda(totalp3) +"\n";
+    // 7. Calcular o total final
+    const totalFinal = total - desconto;
 
-resultado += "Total sem desconto: " formatarMoeda(total)+"\n"
-resultado +="Desconto: " + formatarMoeda(desconto) + "\n";
+    // 8. Formatar os valores em reais
+    const formatarMoeda = valor =>
+        valor.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
 
-resultado +="Valor a Pagar: " + formatarMoeda(totalfinal);
+    // 9. Mostrar o resultado da compra
+    let resultado = "===== MUNDO DOS LIVROS =====\n\n";
 
-alert(resultado)
+    resultado +=
+        "Dom Casmurro: " +
+        quantidadeDomCasmurro + " unidade(s) - " +
+        formatarMoeda(subtotalDomCasmurro) + "\n";
 
+    resultado +=
+        "O Pequeno Príncipe: " +
+        quantidadePequenoPrincipe + " unidade(s) - " +
+        formatarMoeda(subtotalPequenoPrincipe) + "\n";
 
+    resultado +=
+        "Harry Potter: " +
+        quantidadeHarryPotter + " unidade(s) - " +
+        formatarMoeda(subtotalHarryPotter) + "\n\n";
 
+    resultado += "Total sem desconto: " +
+        formatarMoeda(total) + "\n";
 
+    resultado += "Desconto: " +
+        formatarMoeda(desconto) + "\n";
+
+    resultado += "TOTAL A PAGAR: " +
+        formatarMoeda(totalFinal);
+
+    alert(resultado);
 }
-
