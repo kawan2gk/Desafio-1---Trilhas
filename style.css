@@ -1,0 +1,17 @@
+/* Organização da parte de layout e cores:*/
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body { font-family: 'Times New Roman', Times, serif;
+    background-color: blueviolet;
+    color: blue;
+    line-height: 1.6;
+}
+
+.produtos h2
+.simulacao h2 {margin-bottom:15px;color: brown;}
+.lista-produtos{display:grid; grid-template-columns: repeat(3, 1fr); 
+gap: 22px;}
