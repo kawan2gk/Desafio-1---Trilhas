@@ -11,6 +11,8 @@ body { font-family: 'Times New Roman', Times, serif;
     line-height: 1.6;
 }
 
+.apresentacao {text-align: center; margin-bottom: 35px;}
+.apresentacao h2
 .produtos h2
 .simulacao h2 {margin-bottom:15px;color: brown;}
 .lista-produtos{display:grid; grid-template-columns: repeat(3, 1fr); 
