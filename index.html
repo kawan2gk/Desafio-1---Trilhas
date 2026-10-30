@@ -1,90 +1,99 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
- <meta charset="UFT-8">
- <meta name="viewport" content="width=device-width,initial-scale=1.0">
- 
- 
- <!--O que deve ser feito:
-    Nome da Loja
-    Três produtos
-    Os preços
-    identidade visual
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    Algo sobre Venda de Livros
---> 
+    <title>Mundo dos Livros | Loja Virtual</title>
 
-<title>LivroTeca - Livraria Brasil</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <header class="cabecalho">
+        <h1>📚 Mundo dos Livros</h1>
+        <p>Sua próxima aventura começa aqui!</p>
+    </header>
+
     <main>
-<section 
-class="apresentacao">
-Seja muito bem vindo a LivroTeca!
-</section>
+        <section class="apresentacao">
+            <h2>Bem-vindo à nossa livraria!</h2>
 
+            <p>
+                Aqui você encontra histórias emocionantes,
+                clássicos da literatura e aventuras inesquecíveis.
+                Escolha seus livros favoritos e simule sua compra!
+            </p>
+        </section>
 
-<section
-class="produtos">
-<div
-class="lista-produtos">
-<article
-class="produto">
-<h3>O pequeno principe</h3> <p>
-Uma historia de aventuras, amizade e amor.
-<p class="preco"> R$ 15,00</p>
-</p>
-</article>
+        <section class="produtos">
+            <h2>Nossos livros</h2>
 
+            <div class="lista-produtos">
 
-<article
-class="produto">
-<h3>O mundo de sofia</h3> <p>
-Uma historia de aventuras, amizade e amor.
-<p class="preco"> R$ 60,00</p>
-</p>
-</article>
+                <article class="produto">
+                    <div class="icone-livro">📖</div>
+                    <h3>Dom Casmurro</h3>
+                    <p>
+                        Um clássico de Machado de Assis
+                        sobre amor, memória e ciúme.
+                    </p>
+                    <p class="preco">R$ 35,90</p>
+                </article>
 
-</div>
-</section>
+                <article class="produto">
+                    <div class="icone-livro">📕</div>
+                    <h3>O Pequeno Príncipe</h3>
+                    <p>
+                        Uma história encantadora sobre
+                        amizade, amor e imaginação.
+                    </p>
+                    <p class="preco">R$ 29,90</p>
+                </article>
 
-<section
-class="simulacao">
+                <article class="produto">
+                    <div class="icone-livro">📗</div>
+                    <h3>Harry Potter e a Pedra Filosofal</h3>
+                    <p>
+                        Uma aventura mágica em um mundo
+                        cheio de mistérios e descobertas.
+                    </p>
+                    <p class="preco">R$ 49,90</p>
+                </article>
 
-<h2> Simule sua compra</h2>
-<p>
- Clique no botão e escolha seu livro
-</p>
-<p> 
-Digite <strong> 0</strong> se não quiser comprar!
-</p>
-<p
-class="desconto">
-Oferecemos 10% de desconto em compras a partir de R$ 100,00
-</p>
-<button
-onclick="simularCompra()">
-Simular compra
-</button>
-</section>
+            </div>
+        </section>
+
+        <section class="simulacao">
+            <h2>🛒 Simule sua compra</h2>
+
+            <p>
+                Clique no botão e informe a quantidade
+                desejada de cada livro.
+            </p>
+
+            <p>
+                Digite <strong>0</strong> se não quiser comprar
+                determinado livro.
+            </p>
+
+            <p class="desconto">
+                🎉 Ganhe 10% de desconto em compras
+                a partir de R$ 100,00!
+            </p>
+
+            <button onclick="simularCompra()">
+                Simular compra
+            </button>
+        </section>
     </main>
 
+    <footer>
+        <p>Desenvolvido por Seu Nome</p>
+        <p>Projeto educacional de HTML, CSS e JavaScript.</p>
+    </footer>
 
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
-<!-- usar o class para definir alguns dados relevantes-->
-
-<!--O pequeno principe, preço: 15. O Mundo de Sofia, preco 60, Biblia, preço: 70  -->
-
-
-
-
-
-</head>
