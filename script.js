@@ -2,9 +2,9 @@
 function simularCompra() {
 
     // 1. Definir os preços dos livros
-    const precoDomCasmurro = 35.90;
-    const precoPequenoPrincipe = 29.90;
-    const precoHarryPotter = 49.90;
+    const precoDomCasmurro = 40.00;
+    const precoPequenoPrincipe = 15.00;
+    const precoHarryPotter = 50.00;
 
     // 2. Perguntar as quantidades
     const quantidadeDomCasmurro = Number(
